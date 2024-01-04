@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         // Llama al archivo UserSeeder.php
         $this->call([
             UserSeeder::class,
+            // Aqui podemos agregar mas seeders para su ejecucion
 
         ]);
 

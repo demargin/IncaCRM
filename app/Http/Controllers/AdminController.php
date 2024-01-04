@@ -8,6 +8,10 @@ class AdminController extends Controller
 {
     public function __construct()
     {
+        /** 
+         * Con esto aseguramos que cualquier método en este controlador requerirá 
+         * que el usuario esté autenticado para acceder a él.
+        */
         $this->middleware('auth');
     }
 
