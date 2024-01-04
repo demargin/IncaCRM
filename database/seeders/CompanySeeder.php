@@ -5,11 +5,11 @@ namespace Database\Seeders;
 use App\Models\Company;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Factory as EloquentFactory;
 
-/**
- * Aqui usamos el metodo factory() de forma global y por eso debemos importar la clase Factory
- */
-use Illuminate\Database\Eloquent\Factories\Factory;
+
+
+//use Illuminate\Database\Eloquent\Factories\Factory; // ya no es necesario desde la version 8
 
 class CompanySeeder extends Seeder
 {
@@ -18,6 +18,16 @@ class CompanySeeder extends Seeder
      */
     public function run(): void
     {
-        factory(App\Models\Company::class, 10)->create();
+
+        /**
+         * truncate() elimina todos los datos de la tabla, 
+         * delete() solo elimina los registros, pero mantiene la estructura de la tabla.
+         */
+        
+         //\DB::table('companies')->truncate();
+         \DB::table('companies')->delete();
+        Company::factory()->count(10)->create();
+    
+        
     }
 }
