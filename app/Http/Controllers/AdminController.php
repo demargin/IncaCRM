@@ -15,5 +15,5 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-    // Resto de las funciones del controlador van aquí
+    
 }

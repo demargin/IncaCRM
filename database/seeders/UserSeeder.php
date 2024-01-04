@@ -35,6 +35,14 @@ class UserSeeder extends Seeder
             'role' => 'user',
         ]);
          
+
+        /**
+         * Aqui se usa el metodo factory() de forma estática en un modelo, 
+         * Laravel automáticamente importa la clase Factory en el namespace del modelo.
+         * User se encuentra en el namespace App\Models. Por lo tanto, Laravel importa 
+         * la clase Factory en el namespace App\Models cuando utiliza el método factory() 
+         * de forma estática en el modelo User.
+         */
         // Crear 20 usuarios adicionales
          User::factory()->count(20)->create();
         
